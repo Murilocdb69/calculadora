@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade</title>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <p id="resul"></p>
+    <script>
+        function soma(num1,num2) {
+            resultado = num1 + num2
+            return resultado;
+        }
+        function sub(num1,num2) {
+            resultado = num1 - num2
+            return resultado;
+        }
+        function mult(num1,num2) {
+            resultado = num1 * num2
+            return resultado;
+        }
+        function div(num1,num2) {
+            resultado = num1 / num2
+            return resultado;
+        }
+        let pergunta = Number(prompt("Você gostaria de fazer uma conta? \n1-Sim \n2-Não"))
+        while (pergunta === 1) {
+        let resul = 0
+        let num1 = Number(prompt("Digite o primeiro valor"))
+        let num2 = Number(prompt("Digite o segundo valor"))
+        let operador = Number(prompt("Qual operador deseja \n1-Soma \n2-Subtração \n3-Multiplicação \n4-Divisão"))
+        switch (operador) {
+            case 1:
+                resul += soma(num1,num2)
+                break;
+            case 2:
+                resul += sub(num1,num2)
+                break;
+            case 3:
+                resul += mult(num1,num2)
+                break;
+            case 4:
+                resul += div(num1,num2)
+                break;
+            default:
+                break;
+        }
+        pergunta = Number(prompt("Você gostaria de fazer mais alguma conta?"))
+        document.getElementById("resul").innerHTML += "Numero 1: " + num1 + " Numero 2: " +num2 + " Resultado: " + resul + "<br/>"
+    }
+    </script>
+</body>
+</html>
